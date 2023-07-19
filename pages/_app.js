@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from '../store/pokemon';
+import PokemonList from '../components/List';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = () => {
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <PokemonList />
+      </div>
+    </Provider>
+  );
+};
 
-export default MyApp
+export default App;
